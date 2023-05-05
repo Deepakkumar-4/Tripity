@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "96640848570",
+    "project_id": "tripity-b0b5e",
+    "storage_bucket": "tripity-b0b5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96640848570:android:bc314ba6409ee013056883",
+        "android_client_info": {
+          "package_name": "com.example.tripity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96640848570-v383u44krk7uod77jrk9188vleka7ce1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2AoVD29mTN37AD0oFx5vrB9uCMrTr0zQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96640848570-v383u44krk7uod77jrk9188vleka7ce1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

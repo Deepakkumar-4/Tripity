@@ -1,8 +1,10 @@
-package com.example.tripity;
+package com.example.tripity.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.tripity.R;
 
 public class MainActivity extends AppCompatActivity {
 
