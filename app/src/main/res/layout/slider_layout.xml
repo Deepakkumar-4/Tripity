@@ -20,7 +20,7 @@
         android:text="@string/onBoarding1"
         android:textStyle="bold"
         android:fontFamily="@font/theseasons_regular"
-        android:textColor="@color/black"
+        android:textColor="@color/grey_darker"
         android:gravity="center"
         android:textSize="30dp"
         android:layout_marginTop="20dp" />
