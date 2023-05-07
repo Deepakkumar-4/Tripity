@@ -162,6 +162,9 @@
                 android:layout_height="match_parent"
                 android:text="Verify"
                 android:background="@drawable/shape"
+                android:textStyle="bold"
+                android:fontFamily="@font/theseasons_regular"
+                android:textSize="20dp"
                 />
 
             <ProgressBar
