@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Tripity</string>
+
+    <string name="onBoarding1">Book Tickets Online</string>
+    <string name="onBoarding2">Quick and Easy payments.</string>
+    <string name="onBoarding3">Journey through our History</string>
+    <string name="onBoarding4">Experience our Legacy</string>
+
+
+    <string name="Defination1">Do not wait in Queue for tickets. Book tickets online for a hassle-free and convenient way to secure your spot and enjoy a seamless travel experience.</string>
+    <string name="Defination2">Quick and easy payments make transactions seamless and hassle-free, allowing you to pay with ease and get back to what really matters."</string>
+    <string name="Defination3">Journey through our History invites you to explore and understand the events, people, and cultures that have shaped our past and present.</string>
+    <string name="Defination4">Experience our Legacy invites you to immerse yourself in the rich traditions, values, and achievements that have been passed down to us from previous generations.</string>
 </resources>

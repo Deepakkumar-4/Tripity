@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp">
+
+    <ImageView
+        android:id="@+id/titleImage"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/bboking"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/titleHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/onBoarding1"
+        android:textStyle="bold"
+        android:fontFamily="@font/theseasons_regular"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/titleDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/Defination1"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12dp"
+        android:layout_margin="20dp" />
+</LinearLayout>
