@@ -24,7 +24,7 @@
             android:name=".verificationActivity"
             android:exported="true"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
 
         </activity>

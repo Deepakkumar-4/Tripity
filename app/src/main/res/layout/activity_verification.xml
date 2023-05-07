@@ -47,8 +47,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
             android:gravity="center"
+            android:layout_marginBottom="25dp"
             android:orientation="horizontal">
 
 
@@ -159,7 +159,9 @@
                 android:id="@+id/Verify"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Verify"/>
+                android:text="Verify"
+                android:background="@drawable/shape"
+                />
 
             <ProgressBar
                 android:id="@+id/OtpprogressBar"

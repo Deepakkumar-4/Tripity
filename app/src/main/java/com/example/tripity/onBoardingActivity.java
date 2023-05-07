@@ -50,7 +50,7 @@ public class onBoardingActivity extends AppCompatActivity {
                     sliderviewPager.setCurrentItem(getItem(1),true);
                 }
                 else {
-                    Intent i = new Intent(onBoardingActivity.this,MainActivity.class);
+                    Intent i = new Intent(onBoardingActivity.this, LoginActivity.class);
                     startActivity(i);
                     finish();
                 }
@@ -61,7 +61,7 @@ public class onBoardingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(onBoardingActivity.this,MainActivity.class);
+                Intent i = new Intent(onBoardingActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
 
