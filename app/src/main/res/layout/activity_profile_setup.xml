@@ -11,76 +11,191 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
         android:orientation="vertical"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:text="Name"
+                android:textSize="22dp" />
+
+            <EditText
+                android:id="@+id/mobileNum"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape"
+                android:fontFamily="@font/montserrat_regular"
+                android:hint="Enter your Name"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Email"
+                android:textSize="22dp"
+                android:fontFamily="@font/montserrat_regular" />
+
+            <EditText
+                android:id="@+id/emailAdd"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape"
+                android:hint="Enter your Email"
+                android:paddingLeft="20dp"
+                android:inputType="textEmailAddress"
+                android:fontFamily="@font/montserrat_regular" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Age"
+                android:textSize="22dp"
+                android:fontFamily="@font/montserrat_regular"/>
+
+            <EditText
+                android:id="@+id/Age"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape"
+                android:hint="Enter your Age"
+                android:paddingLeft="20dp"
+                android:inputType="number"
+                android:fontFamily="@font/montserrat_regular" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Nationality"
+                android:textSize="22dp"
+                android:fontFamily="@font/montserrat_regular" />
+
+            <EditText
+                android:id="@+id/nationality"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape"
+                android:hint="Enter Nationality"
+                android:paddingLeft="20dp"
+                android:inputType="text"
+                android:fontFamily="@font/montserrat_regular" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Identity"
+                android:textSize="22dp"
+                android:fontFamily="@font/montserrat_regular"/>
+
+            <Spinner
+                android:id="@+id/identityType"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:paddingLeft="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape"
+                android:fontFamily="@font/montserrat_regular" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
 
         <EditText
-            android:id="@+id/mobileNum"
+            android:id="@+id/idNumber"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/shape"
-            android:hint="Enter your Name"
-            android:maxLength="10"
+            android:hint="Enter your Identity no."
             android:paddingLeft="20dp"
-            android:paddingRight="20dp" />
+            android:paddingRight="20dp"
+            android:inputType="text"
+            android:fontFamily="@font/montserrat_regular" />
 
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/shape"
-            android:hint="Enter your Email"
-            android:maxLength="10"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp" />
-
-        <EditText
-            android:id="@+id/adhar"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/shape"
-            android:hint="Enter your Adhar no."
-            android:maxLength="10"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp" />
-        <EditText
-            android:id="@+id/nationality"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/shape"
-            android:hint="Enter your Nationality"
-            android:maxLength="10"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp" />
-        <EditText
-            android:id="@+id/age"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/shape"
-            android:hint="Enter your age"
-            android:maxLength="10"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp" />
 
         <Button
             android:id="@+id/saveInfo"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/shape"
-            android:text="Save"
-            android:textStyle="bold"
             android:fontFamily="@font/theseasons_regular"
-            android:textSize="20dp" />
+            android:text="Save"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

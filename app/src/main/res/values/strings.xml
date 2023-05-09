@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Tripity</string>
 
+    <string-array name="identityProof">
+        <item>Adhar card</item>
+        <item>Voter id</item>
+        <item>Passport</item>
+    </string-array>
+
     <string name="onBoarding1">Book Tickets Online</string>
     <string name="onBoarding2">Quick and Easy payments.</string>
     <string name="onBoarding3">Journey through our History</string>

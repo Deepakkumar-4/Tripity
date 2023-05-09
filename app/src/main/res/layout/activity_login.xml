@@ -64,6 +64,8 @@
                 android:background="@drawable/shape"
                 android:hint="Enter Mobile no."
                 android:maxLength="10"
+                android:inputType="number"
+                android:layout_marginLeft="10dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp" />
         </LinearLayout>
