@@ -56,52 +56,48 @@ public class verificationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (    !otp1.getText().toString().trim().isEmpty() &&
+                if (!otp1.getText().toString().trim().isEmpty() &&
                         !otp2.getText().toString().trim().isEmpty() &&
                         !otp3.getText().toString().trim().isEmpty() &&
                         !otp4.getText().toString().trim().isEmpty() &&
                         !otp5.getText().toString().trim().isEmpty() &&
-                        !otp6.getText().toString().trim().isEmpty()    )
-                {
-                    String OtpCode = otp1.getText().toString()+
-                            otp2.getText().toString()+
-                            otp3.getText().toString()+
-                            otp4.getText().toString()+
-                            otp5.getText().toString()+
+                        !otp6.getText().toString().trim().isEmpty()) {
+                    String OtpCode = otp1.getText().toString() +
+                            otp2.getText().toString() +
+                            otp3.getText().toString() +
+                            otp4.getText().toString() +
+                            otp5.getText().toString() +
                             otp6.getText().toString();
 
-                    if (OTPsent != null){
+                    if (OTPsent != null) {
                         progressBar.setVisibility(View.VISIBLE);
                         verify.setVisibility(View.INVISIBLE);
-                        PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(OTPsent,OtpCode);
+                        PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(OTPsent, OtpCode);
 
-                        FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>()
-                                {
-                                    @Override
-                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                        progressBar.setVisibility(View.GONE);
-                                        verify.setVisibility(View.VISIBLE);
-                                        if (task.isSuccessful()){
+                        FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressBar.setVisibility(View.GONE);
+                                verify.setVisibility(View.VISIBLE);
+                                if (task.isSuccessful()) {
 
-                                            Intent intent = new Intent(verificationActivity.this,ProfileSetupActivity.class);
-                                            intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                            startActivity(intent);
-                                            finish();
-                                            // finish just finish the activity that is currently running
-                                            // but finishAffinity finish all activity that are opened previously
+                                    Intent intent = new Intent(verificationActivity.this, ProfileSetupActivity.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(intent);
+                                    finish();
+                                    // finish just finish the activity that is currently running
+                                    // but finishAffinity finish all activity that are opened previously
 
-                                        }else
-                                        {
-                                            Toast.makeText(getApplicationContext(), "Enter the correct OTP", Toast.LENGTH_LONG).show();
-                                        }
-                                    }
-                                });
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Enter the correct OTP", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
 
-                    }else
-                    {
+                    } else {
                         Toast.makeText(verificationActivity.this, "Please check Internet connection", Toast.LENGTH_SHORT).show();
                     }
-                }else {
+                } else {
                     Toast.makeText(verificationActivity.this, "Enter OTP", Toast.LENGTH_LONG).show();
                 }
 

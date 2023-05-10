@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ProfileSetupActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    EditText uname,emailAdd,age,nationality,identityNum;
+    EditText uname, emailAdd, age, nationality, identityNum;
     Spinner spinner;
     Button save;
     DatabaseReference databaseReference;
@@ -27,9 +27,9 @@ public class ProfileSetupActivity extends AppCompatActivity implements AdapterVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_setup);
-        uname =findViewById(R.id.username);
-        emailAdd =findViewById(R.id.emailAdd);
-        age =findViewById(R.id.Age);
+        uname = findViewById(R.id.username);
+        emailAdd = findViewById(R.id.emailAdd);
+        age = findViewById(R.id.Age);
         nationality = findViewById(R.id.nationality);
         identityNum = findViewById(R.id.idNumber);
 
@@ -56,26 +56,26 @@ public class ProfileSetupActivity extends AppCompatActivity implements AdapterVi
     }
 
     //insert data to data dabe
-    private  void insertProfileData(){
+    private void insertProfileData() {
 
-        String name =uname.getText().toString();
+        String name = uname.getText().toString();
         String Age = age.getText().toString();
-        String email= emailAdd.getText().toString();
-        String idProof =spinner.getSelectedItem().toString();
+        String email = emailAdd.getText().toString();
+        String idProof = spinner.getSelectedItem().toString();
         String identity = identityNum.getText().toString();
         String nationlityType = nationality.getText().toString();
 
 
-        ProfileUpdate profileUpdate =new ProfileUpdate( name,  email,  Age,  idProof,  identity,  nationlityType);
+        ProfileUpdate profileUpdate = new ProfileUpdate(name, email, Age, idProof, identity, nationlityType);
         databaseReference.push().setValue(profileUpdate);
         Toast.makeText(this, "Updated", Toast.LENGTH_SHORT).show();
-        
+
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
         String selected = adapterView.getItemAtPosition(position).toString();
-    
+
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.example.tripity.Adapters;
 
 public class ProfileUpdate {
-    String name,email,Age,idtype,idnum,nationlity;
+    String name, email, Age, idtype, idnum, nationlity;
 
     public ProfileUpdate(String name, String email, String age, String idtype, String idnum, String nationlity) {
         this.name = name;
