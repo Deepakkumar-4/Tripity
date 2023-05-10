@@ -104,17 +104,20 @@ public class ProfileSetupActivity extends AppCompatActivity implements AdapterVi
         String identity = identityNum.getText().toString();
         String nationlityType = nationality.getText().toString();
 
+        String id = databaseReference.push().getKey();
+
         edit_details.putString("Name",name);
         edit_details.putString("Age",Age);
         edit_details.putString("Email",email);
         edit_details.putString("Id",idProof);
         edit_details.putString("IdNum",identity);
         edit_details.putString("Nationlity",nationlityType);
+        edit_details.putString("referenceId",id);
         edit_details.apply();
 
         ProfileUpdate profileUpdate = new ProfileUpdate(name, email, Age, idProof, identity, nationlityType, Phone);
-        databaseReference.push().setValue(profileUpdate);
-        Toast.makeText(this, "Updated", Toast.LENGTH_SHORT).show();
+        databaseReference.child(userInput).setValue(profileUpdate);
+        Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
 
     }
 
