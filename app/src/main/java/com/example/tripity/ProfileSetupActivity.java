@@ -48,10 +48,42 @@ public class ProfileSetupActivity extends AppCompatActivity implements AdapterVi
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                insertProfileData();
-                Intent intent = new Intent(ProfileSetupActivity.this, DashboardActivity.class);
-                startActivity(intent);
-                finish();
+
+                if (!uname.getText().toString().trim().isEmpty()){
+
+                    if (!emailAdd.getText().toString().trim().isEmpty()){
+
+                        if (!age.getText().toString().trim().isEmpty()){
+
+                            if (!nationality.getText().toString().trim().isEmpty()){
+
+                                if (!identityNum.getText().toString().trim().isEmpty()){
+
+                                    insertProfileData();
+                                    Intent intent = new Intent(ProfileSetupActivity.this, DashboardActivity.class);
+                                    startActivity(intent);
+                                    finish();
+
+                                }else {
+                                    Toast.makeText(ProfileSetupActivity.this, "Enter Your Correct Information", Toast.LENGTH_LONG).show();
+                                }
+
+                            }else {
+                                Toast.makeText(ProfileSetupActivity.this, "Enter Your Nationality", Toast.LENGTH_LONG).show();
+                            }
+
+                        }else {
+                            Toast.makeText(ProfileSetupActivity.this, "Enter Your Age", Toast.LENGTH_LONG).show();
+                        }
+
+                    }else {
+                        Toast.makeText(ProfileSetupActivity.this, "Enter Your Email", Toast.LENGTH_LONG).show();
+                    }
+
+                }else {
+                    Toast.makeText(ProfileSetupActivity.this, "Enter Your Details", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
@@ -61,6 +93,7 @@ public class ProfileSetupActivity extends AppCompatActivity implements AdapterVi
     private void insertProfileData() {
 
         SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor edit_details = preferences.edit();
         String userInput = preferences.getString("phone", "");
 
         String Phone = userInput;
@@ -71,6 +104,13 @@ public class ProfileSetupActivity extends AppCompatActivity implements AdapterVi
         String identity = identityNum.getText().toString();
         String nationlityType = nationality.getText().toString();
 
+        edit_details.putString("Name",name);
+        edit_details.putString("Age",Age);
+        edit_details.putString("Email",email);
+        edit_details.putString("Id",idProof);
+        edit_details.putString("IdNum",identity);
+        edit_details.putString("Nationlity",nationlityType);
+        edit_details.apply();
 
         ProfileUpdate profileUpdate = new ProfileUpdate(name, email, Age, idProof, identity, nationlityType, Phone);
         databaseReference.push().setValue(profileUpdate);
