@@ -1,15 +1,20 @@
 package com.example.tripity.Adapters;
 
 public class ProfileUpdate {
-    String name, email, Age, idtype, idnum, nationlity;
+    String name, email, Age, idtype, idnum, nationlity , phone;
 
-    public ProfileUpdate(String name, String email, String age, String idtype, String idnum, String nationlity) {
-        this.name = name;
-        this.email = email;
-        this.Age = age;
-        this.idtype = idtype;
-        this.idnum = idnum;
-        this.nationlity = nationlity;
+    public ProfileUpdate(String Name, String Email, String Age, String Idtype, String Idnum, String Nationlity, String Phone) {
+        this.name = Name;
+        this.email = Email;
+        this.Age = Age;
+        this.idtype = Idtype;
+        this.idnum = Idnum;
+        this.nationlity = Nationlity;
+        this.phone = Phone;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 
     public String getName() {

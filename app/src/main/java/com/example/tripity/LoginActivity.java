@@ -1,6 +1,7 @@
 package com.example.tripity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +44,12 @@ public class LoginActivity extends AppCompatActivity {
 
                         progressBar.setVisibility(View.VISIBLE);
                         login.setVisibility(View.INVISIBLE);
+
+
+                        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("phone", country.getText().toString() + "-" + phoneNum.getText().toString());
+                        editor.apply();
 
                         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                                 country.getText().toString() + phoneNum.getText().toString(),

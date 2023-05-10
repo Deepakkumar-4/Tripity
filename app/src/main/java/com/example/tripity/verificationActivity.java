@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tripity.Adapters.PhoneUpdate;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -21,6 +22,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 
@@ -74,6 +77,9 @@ public class verificationActivity extends AppCompatActivity {
                         verify.setVisibility(View.INVISIBLE);
                         PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(OTPsent, OtpCode);
 
+                        //updatePhone();
+                        String phone = getIntent().getStringExtra("mobile");
+                        new PhoneUpdate(phone);
                         FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -147,6 +153,17 @@ public class verificationActivity extends AppCompatActivity {
 
 
     }
+
+//    private void updatePhone() {
+//        String phone = getIntent().getStringExtra("mobile");
+//        PhoneUpdate phoneUpdate =new PhoneUpdate(phone);
+//        DatabaseReference databaseReference = FirebaseDatabase.getInstance()
+//                .getReference().child("UserPrimaryKey");
+//        databaseReference.child("Phone Number").push().setValue(phone);
+//
+//        phoneUpdate.setPhoneNUm(phone);
+//
+//    }
 
     private void numberotmove() {
 

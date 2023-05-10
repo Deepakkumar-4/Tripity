@@ -3,6 +3,7 @@ package com.example.tripity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.tripity.Adapters.PhoneUpdate;
 import com.example.tripity.Adapters.ProfileUpdate;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -33,7 +35,7 @@ public class ProfileSetupActivity extends AppCompatActivity implements AdapterVi
         nationality = findViewById(R.id.nationality);
         identityNum = findViewById(R.id.idNumber);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("UserPrimaryKey");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
 
         spinner = findViewById(R.id.identityType);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter
@@ -55,9 +57,13 @@ public class ProfileSetupActivity extends AppCompatActivity implements AdapterVi
 
     }
 
-    //insert data to data dabe
+    //insert data to database
     private void insertProfileData() {
 
+        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String userInput = preferences.getString("phone", "");
+
+        String Phone = userInput;
         String name = uname.getText().toString();
         String Age = age.getText().toString();
         String email = emailAdd.getText().toString();
@@ -66,7 +72,7 @@ public class ProfileSetupActivity extends AppCompatActivity implements AdapterVi
         String nationlityType = nationality.getText().toString();
 
 
-        ProfileUpdate profileUpdate = new ProfileUpdate(name, email, Age, idProof, identity, nationlityType);
+        ProfileUpdate profileUpdate = new ProfileUpdate(name, email, Age, idProof, identity, nationlityType, Phone);
         databaseReference.push().setValue(profileUpdate);
         Toast.makeText(this, "Updated", Toast.LENGTH_SHORT).show();
 
