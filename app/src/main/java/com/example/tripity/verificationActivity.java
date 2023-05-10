@@ -86,7 +86,7 @@ public class verificationActivity extends AppCompatActivity {
                                             Intent intent = new Intent(verificationActivity.this,ProfileSetupActivity.class);
                                             intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             startActivity(intent);
-                                            finishAffinity();
+                                            finish();
                                             // finish just finish the activity that is currently running
                                             // but finishAffinity finish all activity that are opened previously
 

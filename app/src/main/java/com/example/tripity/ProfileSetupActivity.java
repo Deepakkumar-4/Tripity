@@ -21,7 +21,6 @@ public class ProfileSetupActivity extends AppCompatActivity implements AdapterVi
     EditText uname,emailAdd,age,nationality,identityNum;
     Spinner spinner;
     Button save;
-    FirebaseDatabase database;
     DatabaseReference databaseReference;
 
     @Override
