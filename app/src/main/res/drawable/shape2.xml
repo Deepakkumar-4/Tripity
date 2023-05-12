@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- set the corner radius to your desired value -->
+    <corners android:radius="25dp" />
+
+    <!-- set the background color of the card view -->
+    <solid android:color="@android:color/white" />
+
+
+</shape>

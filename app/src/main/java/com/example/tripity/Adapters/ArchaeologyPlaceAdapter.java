@@ -31,7 +31,7 @@ public class ArchaeologyPlaceAdapter extends RecyclerView.Adapter<ArchaeologyPla
     @Override
     public ArchaeologyPlaceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View itemView = LayoutInflater.from(context).inflate(R.layout.archaeology_place_item, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.archaeology_place_item, parent, false);
         ArchaeologyPlaceViewHolder viewHolder=new ArchaeologyPlaceViewHolder(itemView);
         return viewHolder;
 
@@ -39,16 +39,25 @@ public class ArchaeologyPlaceAdapter extends RecyclerView.Adapter<ArchaeologyPla
     @Override
     public void onBindViewHolder(@NonNull ArchaeologyPlaceViewHolder holder, int position) {
 
+        //it get data form list tempraryly
         ArchaeologyPlace archaeologyPlace = archaeologyPlacesList.get(position);
+
         holder.archaeologyPlaceImageView.setImageResource(archaeologyPlace.getImageUrl());
         holder.archaeologyPlaceNameTextView.setText(archaeologyPlace.getName());
         holder.archaeologyPlaceLocationTextView.setText(archaeologyPlace.getLocation());
 
-//        Glide.with(context)
-//                .load(archaeologyPlace.getImageUrl())
-//                .placeholder(R.drawable.ahmedabad_pana)
-//                .into(holder.archaeologyPlaceImageView);
-//
+        holder.archaeologyPlaceImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,ArchaeologyPlaceDetailActivity.class);
+                intent.putExtra("Image",archaeologyPlace.getImageUrl());
+                intent.putExtra("Place",archaeologyPlace.getName());
+                intent.putExtra("Location",archaeologyPlace.getLocation());
+                intent.putExtra("Description",archaeologyPlace.getDescription());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
     }
     @Override
     public int getItemCount() {

@@ -26,12 +26,11 @@ public class ArchaeologyPlaceDetailActivity extends AppCompatActivity {
         archaeologyPlaceDescriptionTextView = findViewById(R.id.archaeology_place_description_text_view);
 
         // Get the selected archaeological place from the intent
-        ArchaeologyPlace selectedPlace = (ArchaeologyPlace) getIntent().getSerializableExtra("selected_place");
 
         // Set the values of the views with the selected archaeological place
-        Glide.with(this).load(selectedPlace.getImageUrl()).placeholder(R.drawable.ahmedabad_rafiki).into(archaeologyPlaceImageView);
-        archaeologyPlaceNameTextView.setText(selectedPlace.getName());
-        archaeologyPlaceLocationTextView.setText(selectedPlace.getLocation());
-        archaeologyPlaceDescriptionTextView.setText(selectedPlace.getDescription());
+        archaeologyPlaceImageView.setImageResource(getIntent().getIntExtra("Image",0));
+        archaeologyPlaceNameTextView.setText(getIntent().getStringExtra("Place"));
+        archaeologyPlaceLocationTextView.setText(getIntent().getStringExtra("Location"));
+        archaeologyPlaceDescriptionTextView.setText(getIntent().getStringExtra("Description"));
     }
 }
