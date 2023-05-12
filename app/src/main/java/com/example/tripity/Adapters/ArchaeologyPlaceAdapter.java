@@ -19,49 +19,46 @@ import com.example.tripity.R;
 import java.util.List;
 
 public class ArchaeologyPlaceAdapter extends RecyclerView.Adapter<ArchaeologyPlaceAdapter.ArchaeologyPlaceViewHolder>{
-    private List<ArchaeologyPlace> archaeologyPlaces;
-    private Context context;
 
-    public ArchaeologyPlaceAdapter(List<ArchaeologyPlace> archaeologyPlaces) {
-        this.archaeologyPlaces = archaeologyPlaces;
-//        this.context = context;
+    List<ArchaeologyPlace> archaeologyPlacesList;
+    Context context;
+
+    public ArchaeologyPlaceAdapter(List<ArchaeologyPlace> archaeologyPlaces,Context context) {
+        this.archaeologyPlacesList = archaeologyPlaces;
+        this.context = context;
     }
-
     @NonNull
     @Override
     public ArchaeologyPlaceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.archaeology_place_item, parent, false);
-        return new ArchaeologyPlaceViewHolder(itemView);
-    }
 
+        View itemView = LayoutInflater.from(context).inflate(R.layout.archaeology_place_item, parent, false);
+        ArchaeologyPlaceViewHolder viewHolder=new ArchaeologyPlaceViewHolder(itemView);
+        return viewHolder;
+
+    }
     @Override
     public void onBindViewHolder(@NonNull ArchaeologyPlaceViewHolder holder, int position) {
-        ArchaeologyPlace archaeologyPlace = archaeologyPlaces.get(position);
 
+        ArchaeologyPlace archaeologyPlace = archaeologyPlacesList.get(position);
+        holder.archaeologyPlaceImageView.setImageResource(archaeologyPlace.getImageUrl());
         holder.archaeologyPlaceNameTextView.setText(archaeologyPlace.getName());
         holder.archaeologyPlaceLocationTextView.setText(archaeologyPlace.getLocation());
 
-        context=holder.itemView.getContext();
-
-        Glide.with(context)
-                .load(archaeologyPlace.getImageUrl())
-                .placeholder(R.drawable.ahmedabad_pana)
-                .into(holder.archaeologyPlaceImageView);
-
-
+//        Glide.with(context)
+//                .load(archaeologyPlace.getImageUrl())
+//                .placeholder(R.drawable.ahmedabad_pana)
+//                .into(holder.archaeologyPlaceImageView);
+//
     }
-
     @Override
     public int getItemCount() {
-        return archaeologyPlaces.size();
+        return archaeologyPlacesList.size();
     }
 
-    public static class ArchaeologyPlaceViewHolder extends RecyclerView.ViewHolder {
+    public  class ArchaeologyPlaceViewHolder extends RecyclerView.ViewHolder {
         public TextView archaeologyPlaceNameTextView;
         public TextView archaeologyPlaceLocationTextView;
         public ImageView archaeologyPlaceImageView;
-
         public ArchaeologyPlaceViewHolder(View itemView) {
             super(itemView);
             archaeologyPlaceNameTextView = itemView.findViewById(R.id.archaeology_place_name_text_view);
@@ -69,4 +66,6 @@ public class ArchaeologyPlaceAdapter extends RecyclerView.Adapter<ArchaeologyPla
             archaeologyPlaceImageView = itemView.findViewById(R.id.archaeology_place_image_view);
         }
     }
+
+
 }

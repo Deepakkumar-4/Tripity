@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/shape"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
+    android:layout_margin="10dp">
 
 <androidx.appcompat.widget.LinearLayoutCompat
     android:layout_width="match_parent"
@@ -28,6 +27,7 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:padding="8dp"
+        android:text="Name"
         android:textColor="@color/black"
         android:fontFamily="@font/montserrat_semibold" />
 
@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:padding="8dp"
+        android:text="Location"
         android:textColor="@color/black"
         android:fontFamily="@font/montserrat_semibold" />
 

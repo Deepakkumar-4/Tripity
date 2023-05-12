@@ -2,10 +2,10 @@ package com.example.tripity.Fragments;
 
 public class ArchaeologyPlace {
 
-    private String name;
-    private String location;
-    private int imageUrl;
-    private String Description;
+    String name;
+    String location;
+    int imageUrl;
+    String Description;
 
     public ArchaeologyPlace(String name, String location, int imageUrl, String description) {
         this.name = name;
@@ -28,6 +28,22 @@ public class ArchaeologyPlace {
 
     public String getDescription() {
         return Description;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setImageUrl(int imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 }
 

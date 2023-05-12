@@ -5,7 +5,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -16,6 +17,7 @@
                 android:id="@+id/archaeology_place_image_view"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:src="@drawable/ahmedabad_rafiki"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -23,6 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
+                android:text="Place Name"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"/>
@@ -33,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:textColor="@color/black"
+                android:text="Location"
                 android:textSize="18sp"/>
 
             <TextView
@@ -41,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:padding="16dp"
+                android:text="Descripion"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
