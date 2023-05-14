@@ -1,6 +1,9 @@
 package com.example.tripity.Adapters;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,13 +36,38 @@ public class RecyclerAddedPerson extends RecyclerView.Adapter<RecyclerAddedPerso
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAddedPerson.AddedPersonModelViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerAddedPerson.AddedPersonModelViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         AddedPersonModel addedPersonModel = addedPersonModelList.get(position);
 
         holder.addedPersonName.setText(addedPersonModel.getName());
         holder.addedPersonId.setText(addedPersonModel.getId());
         holder.addedPersonTicketType.setText(addedPersonModel.getType());
+        holder.addedPersonTicketType.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(context)
+                        .setTitle("Delete Visitor")
+                        .setMessage("Are you sure,want to delete?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                addedPersonModelList.remove(position);
+                                notifyItemRemoved(position);
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        });
+                builder.show();
+                return true;
+            }
+        });
 
 
     }
