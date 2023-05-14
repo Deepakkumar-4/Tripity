@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,14 +28,14 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileFragment extends Fragment {
     TextView name,age,email,idtype,idNum,nationality,phone;
-
+    String userId;
     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences preferences = getActivity().getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        String userId = preferences.getString("phone", "");
+         userId = preferences.getString("phone", "");
 
         readData(userId);
     }
@@ -52,6 +53,14 @@ public class ProfileFragment extends Fragment {
         idtype = rootView.findViewById(R.id.profile_idtype);
         idNum = rootView.findViewById(R.id.profile_idnum);
         nationality = rootView.findViewById(R.id.profile_nationality);
+
+        ImageButton refresh = rootView.findViewById(R.id.refresh);
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                readData(userId);
+            }
+        });
 
 
         return rootView;
