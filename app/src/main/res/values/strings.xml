@@ -7,6 +7,42 @@
         <item>Passport</item>
     </string-array>
 
+    <string-array name="Ticker_type">
+        <item>Adult</item>
+        <item>child</item>
+    </string-array>
+
+    <string-array name="Cities">
+        <item>Select</item>
+        <item>Agra</item>
+        <item>Delhi</item>
+        <item>Aurangabad</item>
+        <item>Chattarpur</item>
+
+    </string-array>
+
+    <string-array name="places_agra">
+        <item>Taj Mahal</item>
+        <item>FatehPur Sikri</item>
+    </string-array>
+
+    <string-array name="places_delhi">
+        <item>Qutub Minar</item>
+        <item>Akshardham</item>
+    </string-array>
+
+    <string-array name="places_aurangabad">
+        <item>Ellora Caves</item>
+        <item>Aganta Caves</item>
+    </string-array>
+
+    <string-array name="places_chattarpur">
+        <item>Khajuraho Temples</item>
+    </string-array>
+    <string-array name="select_city">
+        <item>Select City First</item>
+    </string-array>
+
     <string name="onBoarding1">Book Tickets Online</string>
     <string name="onBoarding2">Quick and Easy payments.</string>
     <string name="onBoarding3">Journey through our History</string>

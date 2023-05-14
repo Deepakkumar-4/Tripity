@@ -73,7 +73,7 @@ public class ProfileFragment extends Fragment {
                  if (task.isSuccessful()){
 
                      if (task.getResult().exists()){
-                         Toast.makeText(getActivity(), "data Fetched", Toast.LENGTH_SHORT).show();
+//                         Toast.makeText(getActivity(), "data Fetched", Toast.LENGTH_SHORT).show();
 
                          DataSnapshot snapshot = task.getResult();
                             name.setText(String.valueOf(snapshot.child("name").getValue()));
